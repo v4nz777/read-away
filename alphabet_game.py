@@ -6,7 +6,7 @@ from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.behaviors.magic_behavior import MagicBehavior
 from kivymd.uix.dialog import MDDialog
 from kivy.core.audio import SoundLoader
-from kivy.graphics import Line, Color, Rectangle
+from kivy.graphics import Line, Color, Rectangle, InstructionGroup
 from materials import FILIPINO_ALPHABETS
 from kivy.metrics import dp
 from kivy.base import EventLoop
@@ -45,22 +45,46 @@ class DrawingCanvas(MDWidget):
     items_answered = ListProperty([])
     scorecard = ObjectProperty(None)
 
+    pointers = ListProperty([])
+    initialized_btns = ListProperty([])
+
+
     def set_initial(self, instance):
         self.item = instance
+        self.initial_x = instance.x
+        self.initial_y = instance.y
         if not self.started and not instance.used:
-            self.initial_x = instance.x
-            self.initial_y = instance.y
             self.draw_point(instance)
             self.selected = instance.text
             instance.used = True
+            self.initialized_btns.append(instance)
             self.started = True
             pop = SoundLoader.load("pop.wav")
             pop.play()
+
+        elif self.started and not instance.used and len(self.pointers) >= 1:
+            for i in self.pointers:
+                with self.canvas:
+                    if i not in self.items_answered:
+                        self.canvas.remove_group(i)
+            for z in self.initialized_btns:
+                z.used = False
+
+            self.pointers.clear()
+            self.draw_point(instance)
+            self.selected = instance.text
+            instance.used = True
+            self.initialized_btns.append(instance)
+            self.started = True
+            pop = SoundLoader.load("pop.wav")
+            pop.play()
+
         else:
             self.erase_point(instance)
             self.set_default(instance)
-            unpop = SoundLoader.load("unpop.wav")
-            unpop.play()
+        
+        print(self.pointers)
+            
             
         
     
@@ -83,6 +107,7 @@ class DrawingCanvas(MDWidget):
                 wrong.play()
             self.items_answered.append(self.selected)
             self.item.disabled = True
+            self.item.used = True
             self.set_default(instance)
             print(self.items_answered)
 
@@ -130,21 +155,24 @@ class DrawingCanvas(MDWidget):
             y = instance.y + (btn_height * 4)
             self.final_x = x
             self.final_y = y
-        with self.canvas.after:
-            Color(rgba=(0,0.7,1,1))
-            Line(points=(x,y,x,y), width=10, joint="round", close=True, cap="round")
+        with self.canvas:
+            Color(rgba=(0,0.7,1,1), group=instance.text)
+            Line(points=(x,y,x,y), width=10, joint="round", close=True, cap="round", group=instance.text)
+            if instance.name == "cap":
+                self.pointers.append(instance.text)
+
+
     
     def erase_point(self, instance):
-        btn_width = instance.width/2
-        btn_height = instance.height/3
+
         if instance.name == "cap":
-            x = instance.x + btn_width
-            y = instance.y - btn_height
-            self.initial_x = x
-            self.initial_y = y
-            with self.canvas.after:
-                Color(rgba=(1,1,1,1))
-                Line(points=(x,y,x,y), width=10, joint="round", close=True, cap="round")
+            with self.canvas:
+                self.canvas.remove_group(instance.text)
+                if len(self.pointers) > 0:
+                    self.pointers.pop(-1)
+            unpop = SoundLoader.load("unpop.wav")
+            unpop.play()
+
         else:
             pass
         
