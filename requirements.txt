@@ -1,0 +1,5 @@
+Kivy
+kivymd @ https://github.com/kivymd/KivyMD/archive/master.zip
+Pillow==9.1.0
+pyjnius==1.4.1
+PyAudio==0.2.12
