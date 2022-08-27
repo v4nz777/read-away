@@ -1,7 +1,7 @@
 # Read Away
 
 **Read Away** is the improved version of **Pabasang Laro**.
-![Lottie](https://imgur.com/a/uY3KDwl)
+[Lottie](https://imgur.com/a/uY3KDwl)
 
 ## Installation in windows
 
