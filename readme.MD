@@ -7,13 +7,13 @@
 ## Installation in windows
 
 - Recommended python version: Python 3.10.5
-- install *requirements.text* inside virtual environment.
+- Install *requirements.text* inside virtual environment.
 	> python venv env
 
 	> env\scripts\activate
 
 	> pip install -r requirement.txt
-- run
+- Run
 	> python main.py --size 1280x720 --dpi 96
 	
 	
