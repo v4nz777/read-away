@@ -1,0 +1,3169 @@
+<StartButton@MDFillRoundFlatIconButton>: 
+<PBIconButton@MDIconButton>:
+    icon_size: dp(65)
+    padding: 0,0,0,0
+    size_hint: 1,1
+<MicButton@MDIconButton>:
+    icon_size: dp(65)
+    padding: 0,0,0,0
+    size_hint: 1,1
+
+<MDIconButton>:
+    md_bg_color_disabled: 0,0,0,0
+        
+<MainMenu>:
+    canvas.before:
+        Rectangle:
+            source: 'intro_bg.jpg'
+            pos: self.pos
+            size: self.size
+        
+
+                
+
+
+        
+####################### ANSWERS #####################################
+<AnswerP1>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase1 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p1
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width
+
+<AnswerP2>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase2 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p2
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+<AnswerP3>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase3 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p3
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+<AnswerP4>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase4 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p4
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+    
+
+<AnswerP5>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase5 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p5
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+
+<AnswerP6>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase6 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p6
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+<AnswerP7>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase7 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu','right')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p7
+                size_hint: 1, None
+                cols: 1
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+#############################################################################################
+################################## START OF GAMES ###########################################
+#############################################################################################
+<IntroToAlphabets>:
+    abctable: abc
+    canvas.before:
+        Rectangle:
+            source: 'intro_bg.jpg'
+            pos: self.pos
+            size: self.size
+    MDGridLayout:
+        id: abc
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+<AlphabetGame>:
+    drawing_canvas: drawing_canvas
+    top_spacer: top_spacer
+    elements_grid: elements_grid
+    canvas.before:
+        Rectangle:
+            source: "sky.jpg"
+            size: self.size
+            pos: self.pos
+        Color:
+            rgba: 1,1,1,1
+    MDLabel:
+        text: "Alphabet Connecting Game"
+        text_color: 0.5,0,0,0.5
+        font_style: "H4"
+        halign: "center"
+        valign: "center"
+        size_hint: 1,1
+        font_name: 'ShadowsIntoLight-Regular.ttf'
+    
+    ScrollView:
+        orientation: "horizontal"
+        do_scroll_x: True
+        do_scroll_y: False
+        size_hint: 1,1
+        always_overscroll: True
+        scroll_distance: 100
+        MDGridLayout:
+            id: elements_grid
+            rows: 4
+            size_hint_x: None
+            width: capital_letters.minimum_width
+            MDWidget:
+                id: top_spacer
+            MDBoxLayout:
+                id: capital_letters
+                size_hint_y: None
+            DrawingCanvas:
+                id: drawing_canvas
+                size_hint: 1,1     
+            MDBoxLayout:
+                id: small_letters
+                size_hint_y: None
+
+
+<PhaseOneTest>:
+    the_alphabet: the_alphabet
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    
+    GridLayout:
+        rows: 5     
+        GridLayout:
+            cols:3
+            BoxLayout:
+            TheAlphabet:
+                id: the_alphabet
+                size: ltr_lbl.size
+                disabled: True
+                size_hint: None, None
+                pos_hint: {'center_x': 0.5}
+                Label:
+                    font_name: 'ShadowsIntoLight-Regular.ttf'
+                    id: ltr_lbl
+                    text: ''
+                    font_size: "100sp"
+                    halign: 'center'
+                    color: 0,0,.5,1
+            BoxLayout:
+        BoxLayout:
+            size_hint_y: 0.3
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                size_hint_y: 0.03
+
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.show_letter()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+            
+
+
+<Carou>:
+<PhonogramAlpha>:
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: "imgs/snowy.jpg"
+        Color:
+            rgba: 1,1,1,1
+    MDGridLayout:
+        rows: 2
+        padding: 20,20,20,20
+        MDLabel:
+            text: "PHONETIC SOUNDS"
+            halign: 'center'
+            font_size: "25sp"
+            font_name: 'Comfortaa-SemiBold.ttf'
+            size_hint_y: 0.1
+        MDGridLayout:
+            cols: 3
+            size_hint: 1,1
+            MDGridLayout:
+                rows: 2
+                MDLabel:
+                    text: "The Alphabet"
+                    halign: 'center'
+                    font_size: "18sp"
+                    size_hint_y: 0.1
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: phonograms_alpha
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 3
+                        spacing: 10
+                        padding: 100,0,100,0
+
+
+            MDGridLayout:
+                rows: 2
+                MDLabel:
+                    text: "Dipthongs"
+                    halign: 'center'
+                    font_size: "18sp"
+                    size_hint_y: 0.1
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: phonograms_ct
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 3
+                        spacing: 10
+                        padding: 100,0,100,0
+
+            MDGridLayout:
+                rows: 2
+                MDLabel:
+                    text: "Digraphs"
+                    halign: 'center'
+                    font_size: "18sp"
+                    size_hint_y: 0.1
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: phonograms_vt
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 3
+                        spacing: 10
+                        padding: 100,0,100,0
+
+            
+
+
+
+
+
+    
+    # Carou:
+    #     id: carousel
+    #     direction: 'right' 
+
+    #     MDGridLayout:
+    #         rows:2
+            
+
+    #         MDGridLayout:
+    #             id: phonograms_alpha
+    #             cols: 7
+    #             adaptive_size: True
+    #             spacing: 5,5
+
+    #     MDGridLayout:
+    #         rows: 4
+            
+    #         MDLabel:
+    #             text: "Dipthongs"
+    #             halign: 'center'
+    #             font_size: "18sp"
+    #             size_hint: None,None
+    #             height: self.font_size
+
+    #         MDGridLayout:
+    #             id: phonograms_ct
+    #             cols: 7
+    #             adaptive_size: True
+    #             spacing: 5,5
+
+    #         MDLabel:
+    #             text: "Digraphs"
+    #             halign: 'center'
+    #             font_size: "18sp"
+    #             size_hint: None,None
+    #             height: self.font_size
+    #         MDGridLayout:
+    #             id: phonograms_vt
+    #             cols: 7
+    #             adaptive_size: True
+    #             spacing: 5,5
+    
+    
+<TheLetter>:
+<PhaseTwoTest>:
+    the_letter: the_letter
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    
+    GridLayout:
+        rows: 5
+        GridLayout:
+            cols:3
+            BoxLayout:
+            TheLetter:
+                id: the_letter
+                size: ltr_lbl.size
+                disabled: True
+                size_hint: None, None
+                Label:
+                    font_name: 'ShadowsIntoLight-Regular.ttf'
+                    id: ltr_lbl
+                    text: ''
+                    font_size: "100sp"
+                    halign: 'center'
+                    color: 0,0,.5,1
+            BoxLayout:
+        BoxLayout:
+            size_hint_y: 0.3
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                pos_hint: {'center_y': 0.5}
+                size_hint_y: 0.03
+        
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.show_letter()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+
+
+#############################################################################
+<Blanky>:
+    disabled: True
+    auto_bring_to_front: False
+    size: img_blanky.size
+    size_hint: None,None
+    Image:
+        id: img_blanky
+        size: dp(100), dp(100)
+        source: "imgs/letter_blocks/empty.png"
+
+<TwoLetterWords>:
+    blank_1: blank_1
+    blank_2: blank_2
+    consonants: consonants
+    vowels: vowels
+    GridLayout:
+        rows: 3
+        size_hint: 1,1
+        canvas.before:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                size: self.size
+                source: 'imgs/clouds.jpg'
+        GridLayout:
+            cols:3
+            BoxLayout:
+            BoxLayout: 
+                Blanky:
+                    id: blank_1
+                Blanky:
+                    id: blank_2
+            BoxLayout:
+        BoxLayout:
+            size_hint_y: 0.3
+        GridLayout:
+            cols: 3
+            canvas.before:
+                Rectangle:
+                    size: self.size
+                    source: 'underwater.png'
+            canvas.after:
+                Color:
+                    rgba: 1,1,1,0.3
+                Rectangle:
+                    size: self.size
+                    source: 'underwater.png'
+        
+            BoxLayout:
+                GridLayout:
+                    cols: 7
+                    id: consonants
+            BoxLayout:
+                size_hint_x: None
+            BoxLayout:
+                GridLayout:
+                    cols: 5
+                    id: vowels
+
+        
+<Left@Vowel>:
+    size_hint: 0.5, 1
+    location: "left"
+    disabled: True
+    auto_bring_to_front: False
+    Image: 
+        size: self.parent.size
+        source: 'imgs/letter_blocks/empty.png'
+
+<Right@Vowel>:
+    size_hint: 0.5, 1
+    location: "right"
+    disabled: True
+    auto_bring_to_front: False
+    Image: 
+        size: self.parent.size
+        source: 'imgs/letter_blocks/empty.png'
+
+#####################################################
+            
+
+                     
+<FirstBox>:
+<SecondBox>:
+<TwoLetterWordsLevel3>:
+    first_box: box1
+    second_box: box2
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    GridLayout:
+        rows: 5
+        GridLayout:
+            cols: 5
+            spacing: 5
+            BoxLayout:
+                size_hint_x: 1
+            
+            FirstBox:
+                id: box1
+                size: box_img_box1.size
+                disabled: True
+                auto_bring_to_front:False
+                size_hint: None,None        
+                Image:
+                    id: box_img_box1
+                    size: self.parent.size
+                    source:"imgs/letter_blocks/empty.png"
+            BoxLayout:
+                size_hint_x: 0.01
+            SecondBox:
+                id: box2
+                size: box_img_box2.size
+                disabled: True
+                auto_bring_to_front:False     
+                size_hint: None,None        
+                Image:
+                    id: box_img_box2
+                    size: self.parent.size
+                    source:"imgs/letter_blocks/empty.png"
+            BoxLayout:
+                size_hint_x: 1
+
+        BoxLayout:
+            size_hint_y: 0.3
+
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                pos_hint: {'center_y': 0.5}
+                size_hint_y: 0.03
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+
+
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.next()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+    
+
+            
+<Cvc>:
+    canvas.before:
+        Rectangle:
+            source: 'park.jpg'
+            pos: self.pos
+            size: self.size
+    GridLayout:
+        cols: 2
+        spacing: 10
+        pos_hint: {'center_x': 0.5}
+        padding: 50
+
+        MDRaisedButton:
+            text: "CVC Short /a/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0.5,0,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelA"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Long /a/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0,0.5,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelALong"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Short  /e/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0.5,0,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelE"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Long  /e/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0,0.5,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelELong"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Short  /i/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0.5,0,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelI"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Long  /i/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0,0.5,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelILong"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Short  /o/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0.5,0,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelO"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Long  /o/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0,0.5,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelOLong"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Short  /u/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0.5,0,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelU"
+                root.manager.transition.direction = 'left'
+        MDRaisedButton:
+            text: "CVC Long  /u/ words"
+            font_size: dp(20)
+            md_bg_color: 0,0,0.5,0.8
+            size_hint: 0.5, 0.5
+            on_release: 
+                root.manager.current = "VowelULong"
+                root.manager.transition.direction = 'left'
+<VowelA>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Short  /a/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+
+        ScrollView:
+        
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_a
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+<VowelE>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Short  /e/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+        
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_e
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelI>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Short  /i/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+        
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_i
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelO>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Short  /o/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_o
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+<VowelU>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Short  /u/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+        
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_u
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelALong>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Long  /a/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_a
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelELong>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Long  /e/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_e
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelILong>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Long  /i/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+        
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_i
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelOLong>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Long  /o/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_o
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+<VowelULong>:
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "CVC Long  /u/ words"
+            font_style: "H3"
+            halign: "center"
+            font_name: "NotoSerif-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            scroll_distance: 50
+            do_scroll_x: False
+            always_overscroll: True
+            StackLayout:
+                id: cvc_u
+                size_hint: 1, None
+                height: self.minimum_height
+                orientation: 'lr-tb'
+                padding: 100,100,100,100
+                spacing: 50
+
+
+<StoryTitle@Label>:
+    font_size: dp(40)
+    font_name: 'Comfortaa-SemiBold.ttf'
+    halign: "center"
+    pos_hint: {"center_x": 0.5, "center_y": 0.9}
+    color: 0,0.3,1,1
+
+<StorySub@Label>:
+    font_size: dp(25)
+    font_name: 'Comfortaa-SemiBold.ttf'
+    halign: "center"
+    color: 0,0,0,0.9
+
+<Caro>:
+<CVCStory>:
+    caro: carousel
+    Caro:
+        direction: 'right'
+        id: carousel
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    source: 'imgs/cvc/story1.jpg'
+                    size: self.size
+        
+            
+            StoryTitle: 
+                text: "Rat on Mat"
+            ####
+            StorySub: 
+                text: "Nat is a rat."
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            
+            StorySub: 
+                text: "Nat is fat."
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            StorySub: 
+                text: "Nat sat on a mat."
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            StorySub: 
+                text: "Nat ate the mat."
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            
+            
+
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,0.5
+                Rectangle:
+                    source: 'imgs/cvc/story2.jpg'
+                    size: self.size
+
+            StoryTitle: 
+                text: "TED’s PET"
+                # Ted  has  dog   pet.
+                # He is Ned.
+                # Ted went on the bed
+                # Ned and ped pee on the bed.
+                # The bed gets  wet.
+                # Ted let the pets went out of the bed.
+            
+            StorySub: 
+                text: "Ted  has  dog   pet."
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            
+            StorySub: 
+                text: "He is Ned."
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            StorySub: 
+                text: "Ted  and Ned went on the bed"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            StorySub: 
+                text: "Ned pee on the bed."
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            StorySub: 
+                text: "The bed gets  wet."
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+            StorySub: 
+                text: "Ted let the pets went out of the bed."
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    source: 'imgs/cvc/story3.jpg'
+                    size: self.size
+
+            StoryTitle: 
+                text: "The Pin in the Bin"
+                # I have a pin.
+                # Jin went on a bin.
+                # She put my pin in a bin
+                # The cat went in and get the pin.
+
+            
+            StorySub: 
+                text: "I have a pin."
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            
+            StorySub: 
+                text: "Jin went on a bin."
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            StorySub: 
+                text: "She put my pin in a bin."
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            StorySub: 
+                text: "The cat went in and get the pin."
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,0.5
+                Rectangle:
+                    source: 'imgs/cvc/story4.jpg'
+                    size: self.size
+
+            StoryTitle: 
+                text: "The Hot Pot"
+                # On the top of the rock is a hot pot.
+                # There is a cob.
+                # The cob hit the top of the pot.
+                # The pot roll on the log.
+                # The cob eats the cod.
+
+
+            StorySub: 
+                text: "On the top of the rock is a hot pot."
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            
+            StorySub: 
+                text: "There is a cob."
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            StorySub: 
+                text: "The cob hit the top of the pot."
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                
+            StorySub: 
+                text: "The pot roll on the log."
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+
+            StorySub: 
+                text: "The cob eats the cod."
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 1,1,0,0.5
+                Rectangle:
+                    source: 'imgs/cvc/story5.png'
+                    size: self.size
+            StoryTitle: 
+                text: "The Bugs and my Buns"
+                # The sun is hot
+                # I am ready to have fun.
+                # I have some buns.
+                # I ate some. 
+                # The bugs kiss my buns.
+                # I run.
+
+            
+            StorySub: 
+                text: "The sun is hot."
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            
+            StorySub: 
+                text: "I am ready to have fun."
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            StorySub: 
+                text: "I have some buns."
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            StorySub: 
+                text: "I ate some. "
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            StorySub: 
+                text: "The bugs kiss my buns."
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+            StorySub: 
+                text: "I run."
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+
+
+<WordBox>:
+<CvcQuiz>:
+    word_box: wordbox
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    
+    GridLayout:
+        rows: 5
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordBox:
+                id: wordbox
+                size: wordbox_img.size
+                size_hint: None,None   
+                disabled: True      
+                Image:
+                    id: wordbox_img
+                    size: self.texture_size
+                    source:"imgs/letter_blocks/empty.png"
+            BoxLayout:
+
+        BoxLayout:
+            size_hint_y: 0.3
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                pos_hint: {'center_y': 0.5}
+                size_hint_y: 0.03
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.show_word()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+
+
+            
+####################################################################################
+
+<CBlank>:
+    size_hint:None,None
+<CVCandE>:
+    cblank: cblank
+    vce_caro:vce_caro
+    cvce_target_layout:cvce_target_layout
+
+    
+    GridLayout:
+        rows:3
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                source: "imgs/darkmountains.jpg"
+                size:self.size
+                pos:self.pos      
+        GridLayout:
+            cols:5
+            spacing: 50
+            padding: 10
+            size_hint_y: 0.5
+            MDRaisedButton:
+                size_hint_x: 1
+                font_size: "25sp"
+                md_bg_color: 0.5,0.5,0,1
+                text: "/a/"
+                on_release:
+                    root.switch_ey('ake', False)
+            MDRaisedButton:
+                size_hint_x: 1
+                font_size: "25sp"
+                text: "/i/"
+                md_bg_color: 0.5,0.5,0,1
+                on_release:
+                    root.switch_ay('ice', False)
+            MDRaisedButton:
+                size_hint_x: 1
+                font_size: "25sp"
+                text: "/o/"
+                md_bg_color: 0.5,0.5,0,1
+                on_release:
+                    root.switch_ow('ope', False)
+            MDRaisedButton:
+                size_hint_x: 1
+                font_size: "25sp"
+                text: "/ŭ/"
+                md_bg_color: 0.5,0.5,0,1
+                on_release:
+                    root.switch_syu('une', False)
+            
+            MDRaisedButton:
+                size_hint_x: 1
+                font_size: "25sp"
+                text: "/ū/"
+                md_bg_color: 0.5,0.5,0,1
+                on_release:
+                    root.switch_lyu('ute', False)
+
+
+        GridLayout:
+            id:cvce_target_layout
+            size_hint:1,1
+            cols: 4
+            spacing: 15
+            AnchorLayout:
+
+
+            AnchorLayout:####
+                #size_hint:1,None
+                anchor_x: "right"
+                CBlank:
+                    id: cblank
+                    disabled: True
+            VCeCaro:
+                #size_hint:1,None
+                id: vce_caro
+                direction: "bottom" 
+                canvas.before:
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+                    Color:
+                        rgba: 1,0,0,1
+                
+
+            AnchorLayout:
+                
+        GridLayout:
+            cols:3
+            BoxLayout:
+                size_hint_x:0.5
+            GridLayout:
+                cols: 5
+                spacing: 10
+                id: consonants_container
+                size_hint:1,1
+            BoxLayout:
+                size_hint_x:0.5
+            
+
+
+<WordOutline>:
+<CvcQuiz2>:
+    word_outline: word_outline
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+      
+
+    GridLayout:
+        rows: 5
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordOutline:
+                id: word_outline
+                disabled: True
+                auto_bring_to_front: False
+                do_scale: False
+                do_rotation: False
+                size: wordoutline_img.size
+                size_hint: None,None          
+                Image:
+                    id: wordoutline_img
+                    size: self.texture_size
+                    source:"imgs/cvcplus/empty.png"
+        
+            BoxLayout:
+        BoxLayout:
+            size_hint_y: 0.3
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                pos_hint: {'center_y': 0.5}
+                size_hint_y: 0.03
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.show_word()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+
+
+###################################################################################
+
+
+<Phase6Main>:
+    canvas.before:
+        Rectangle:
+            source: 'room.jpg'
+            pos: self.pos
+            size: self.size
+    dipthongs_samp: dipthongs_samp
+    digraphs_samp: digraphs_samp
+    consblends_samp: consblends_samp
+    GridLayout:
+        rows: 2
+        
+        GridLayout:
+            cols: 3
+            size_hint: 1,1
+            spacing: 15
+            padding: 10
+
+            GridLayout:
+                size_hint: 1,1
+                rows: 3
+                
+                MDLabel:
+                    text: "Dipthongs"
+                    halign: "center"
+                    font_style: "H4"
+                    font_name: "JosefinSans-Regular.ttf"
+                    size_hint_y: 0.2
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: dipthongs_samp
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 1
+                        spacing: 10
+                        padding: 100,0,100,0
+                MDRectangleFlatButton:
+                    size_hint: 1,0.2
+                    text: "Examples"
+                    font_name: "JosefinSans-Regular.ttf"
+                    text_color: (0.8, 0.3, 0.2, 1)
+                    line_color: (0.8, 0.3, 0.2, 1)
+                    on_release:
+                        root.manager.current = "Dipthongs"
+                        root.manager.transition.direction = "up"
+            GridLayout:
+                size_hint: 1,1
+                rows: 3
+                
+                MDLabel:
+                    text: "Digraphs"
+                    halign: "center"
+                    font_style: "H4"
+                    font_name: "JosefinSans-Regular.ttf"
+                    size_hint_y: 0.2
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: digraphs_samp
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 1
+                        spacing: 10
+                        padding: 100,0,100,0
+                MDRectangleFlatButton:
+                    size_hint: 1,0.2
+                    text: "Examples"
+                    font_name: "JosefinSans-Regular.ttf"
+                    text_color: (0.8, 0.3, 0.2, 1)
+                    line_color: (0.8, 0.3, 0.2, 1)
+                    on_release:
+                        root.manager.current = "Digraphs"
+                        root.manager.transition.direction = "up"
+            GridLayout:
+                size_hint: 1,1
+                rows: 3
+                
+                MDLabel:
+                    text: "Consonant Blends"
+                    halign: "center"
+                    font_style: "H4"
+                    font_name: "JosefinSans-Regular.ttf"
+                    size_hint_y: 0.2
+                ScrollView:
+                    do_scroll_x: False
+                    MDGridLayout:
+                        id: consblends_samp
+                        height: self.minimum_height
+                        size_hint: 1, None
+                        cols: 1
+                        spacing: 10
+                        padding: 100,0,100,0
+                MDRectangleFlatButton:
+                    size_hint: 1,0.2
+                    text: "Examples"
+                    font_name: "JosefinSans-Regular.ttf"
+                    text_color: (0.8, 0.3, 0.2, 1)
+                    line_color: (0.8, 0.3, 0.2, 1)
+                    on_release:
+                        root.manager.current = "ConsBlends"
+                        root.manager.transition.direction = "up"
+       
+
+<Sample>:
+<Dipthongs>:
+    MDTopAppBar:
+        title: "Dipthongs Examples"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main','down')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz','left')]]
+
+
+    MDGridLayout:
+        id: dipthongs
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+
+<Digraphs>:
+    MDTopAppBar:
+        title: "Digraphs Examples"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main','down')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz','left')]]
+
+
+    MDGridLayout:
+        id: digraphs
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+<ConsBlends>:
+    MDTopAppBar:
+        title: "Consonant Bends"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main','down')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz','left')]]
+
+
+    MDGridLayout:
+        id: consblends
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+            
+
+<WordOutlineRed>:
+<P6Quiz>:
+    word_outline: word_outline
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    
+    
+    GridLayout:
+        rows: 5
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordOutlineRed:
+                id: word_outline
+                disabled: True
+                auto_bring_to_front: False
+                do_scale: False
+                do_rotation: False
+                size: wordoutline_img.size
+                size_hint: None,None          
+                Image:
+                    id: wordoutline_img
+                    size: self.texture_size
+                    source:"imgs/cvcplus/empty.png"
+        
+            BoxLayout:
+
+        BoxLayout:
+            size_hint_y: 0.3
+        BoxLayout:
+            MDProgressBar:
+                id: progress_bar
+                orientation: "horizontal"
+                type: "determinate"
+                value: 0
+                pos_hint: {'center_y': 0.5}
+                size_hint_y: 0.03
+        GridLayout:
+            size_hint: 0.5, 0.5
+            cols: 5
+            BoxLayout:
+                size_hint: 1,1
+            MicButton:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+
+                on_press: 
+                    root.validate()
+            PBIconButton:
+                id: speaker_button
+                icon: "volume-high"
+                on_release: 
+                    root.listen_answer()
+            PBIconButton:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                on_release: 
+                    root.show_word()
+            BoxLayout:
+                size_hint: 1,1
+        BoxLayout:
+
+
+###################### Sight Words Page #####################################
+
+<SightWordsPage>:
+    
+    stacked_links: stacked_links
+    view: view
+
+    MDGridLayout:
+        rows: 2
+        ScrollView:
+            size_hint_y: None
+            BoxLayout:
+                id: stacked_links
+                padding: 15,15,15,15
+                spacing: 10
+                do_scroll_y: False
+                always_overscroll: True
+                size_hint: None, 1
+                width: self.minimum_width
+                # :: list of buttons inside
+        
+        View:
+            id: view
+            canvas:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: "abstract.jpg"
+
+
+##########################################################
+<Comprehension>:
+    ex_1: ex_1
+    ex_2: ex_2
+    ex_3: ex_3
+    ex_4: ex_4
+    ex_5: ex_5
+    ex_6: ex_6
+    ex_7: ex_7
+    ex_8: ex_8
+    ex_9: ex_9
+    GridLayout:
+        rows: 2
+        MDLabel:
+            text: "Reading Comprehension"
+            halign: "center"
+            font_style: "H3"
+            font_name: "ShadowsIntoLight-Regular.ttf"
+            size_hint_y: 0.1
+        ScrollView:
+            size_hint:1,1
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size_hint: 1, None
+                cols: 1
+                padding: 50,10,50,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width
+                
+
+                MDRaisedButton:
+                    id: ex_1
+                    text: "Sunday Morning"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise1','left')
+                MDRaisedButton:
+                    id: ex_2
+                    text: "Gift For Mothers"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise2','left')
+                MDRaisedButton:
+                    id: ex_3
+                    text: "Study Time"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise3','left')
+                MDRaisedButton:
+                    id: ex_4
+                    text: "Safety On The Streets"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise4','left')
+                MDRaisedButton:
+                    id: ex_5
+                    text: "Keeping The Community Clean"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise5','left')
+                MDRaisedButton:
+                    id: ex_6
+                    text: "The Library"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise6','left')
+                MDRaisedButton:
+                    id: ex_7
+                    text: "How To Cook Ensaladang Talbos ng Camote?"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise7','left')
+                MDRaisedButton:
+                    id: ex_8
+                    text: "Jane's Favorite Pillow"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise8','left')
+                MDRaisedButton:
+                    id: ex_9
+                    text: "Our Family Reunion"
+                    md_bg_color: 0,0.5,1,1
+                    font_size: "24sp"
+                    font_name: "ShadowsIntoLight-Regular.ttf"
+                    size_hint_x: 1
+                    on_release:
+                        root.manager.switch('Exercise9','left')
+
+
+
+<QuestionParent@GridLayout>:
+    rows: 2
+    spacing: 10
+    size_hint: 1, 1
+ 
+<ChoiceParent@GridLayout>:
+    cols: 3
+    spacing: 10
+    padding: 15
+    size_hint: 1,1         
+<Question@MDLabel>:
+    font_size: "30sp"
+    size_hint: 1,1
+    halign: 'center'
+    font_name: "ShadowsIntoLight-Regular.ttf"
+
+<Choice>:
+    font_size: "20sp"
+    font_name: "ShadowsIntoLight-Regular.ttf"
+    size_hint: 1,1
+<CaroParent@Carousel>:
+    direction: 'right'
+    size_hint: 1,1
+# <StoryGrid@MDGridLayout>:
+#     rows:2
+#     size_hint_y: None
+#     height: 1000
+<StoryGrid>:
+
+<ComprehensionTitle@MDLabel>:
+    font_name: "ShadowsIntoLight-Regular.ttf"
+    halign: "center"
+    font_size: "50sp"
+    size_hint_y: 0.2
+<ComprehensionBody@MDLabel>:
+    font_name: "ShadowsIntoLight-Regular.ttf"
+    halign: "center"
+    font_size: "25sp"
+    size_hint_y: 1
+    
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise1>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 1
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint:1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/sunday_morning.jpg'
+                
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "SUNDAY MORNING"
+                    ComprehensionBody:
+                        text: "It was Sunday morning.\nFe and Lito went to church\nThey went to church with their father and mother.\nThey prayed in the church.\nThey thanked God for the good things they had.\nThey thanked God for their food,\ntheir clothes and their home."
+
+
+
+                        
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "What day was it?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_1a
+                            text: "Monday"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Wednesday"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "Sunday"
+                            on_release: root.select_1()
+
+                QuestionParent:
+                    Question:
+                        text: "Where did Fe and Lito go?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "to church"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "to school"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "to the market"
+                            on_release: root.select_2()
+
+                QuestionParent:
+                    Question:
+                        text: "What did they do in church?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "play"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "pray"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "plant"
+                            on_release: root.select_3()
+                
+                QuestionParent:
+                    Question:
+                        text: "Who did they thank in their prayers?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "father and mother"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "God"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "their teacher"
+                            on_release: root.select_4()
+
+                QuestionParent:
+                    Question:
+                        text: "Who went with them to the church?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "their father and mother"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "their grandfather\nand grandmother"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "their playmates"
+                            on_release: root.select_5()
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise2>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 2
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos_hint: {'center_y': 0.5}
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/gift_for_mother.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "GIFTS FOR MOTHER"
+                    ComprehensionBody:
+                        text: "“Happy birthday, Mother,” said Luz and Aida.\nThey put a sampaguita necklace\naround Mother’s neck.\nFather and Luis came.\nThey brought gifts for Mother, too.\nThey all kissed Mother.\n“Thank you, I love you all,” said Mother."
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "Whose birthday was it?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_1a
+                            text: "Mother"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Father"
+                            on_release: root.select_1()
+
+                        Choice:
+                            id: choice_1c
+                            text: "Luis"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who were the first to greet Mother?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "Luis and father"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "Aida and Luis"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "Luz and Aida"
+                            on_release: root.select_2()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who kissed Mother?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "Father"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "Luis"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "all"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "Did Father give Mother a gift, too?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "yes"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "no"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "maybe"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "What did Mother say to all?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "“Happy birthday”"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "“I love you all”"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "“I like the flowers”"
+                            on_release: root.select_5()
+
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise3>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 3
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/study_time.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "STUDY TIME"
+                    ComprehensionBody:
+                        text:"Supper time was over.\nLiza washed the dishes.\nTess cleaned the table.\nRomy put out the garbage can.\nThen the children got their books.\nThey studied their lessons.\nThey studied quietly."
+            
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "When was study time for the children?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_1a
+                            text: "after breakfast"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "after lunch"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "after supper"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who washed the dishes?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "Tess"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "Mother"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "Liza"
+                            on_release: root.select_2()
+
+
+                QuestionParent:
+                    Question:
+                        text: "What did Tess do?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "set the table"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "cleaned the table"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "washed the dishes"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "Who put out the garbage can?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "Liza"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "Tess"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "Romy"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "How did the children study their lessons?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "quietly"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "noisyly"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "happily"
+                            on_release: root.select_5()
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise4>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 4
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/safety_on_the_street.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "SAFETY ON THE STREETS"
+                    ComprehensionBody:
+                        text:"Lina and Elena were going to school.\n“Walk faster, Lina,” said Elena.\n“We will be late.”\n“Let us cross the\nstreet here,” said Lina.\n“This is a short way to our school.”\n“No, we should not cross here.\nLet us cross at the right place,”\nsaid Elena.\nThe girls crossed at the right place.\nThey looked to the left and\nto the right before crossing."
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "Who wanted to walk faster?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_1a
+                            text: "Lina"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Elena"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "the teacher"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who wanted to cross at the wrong place?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "Lina"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "Elena"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "the teacher"
+                            on_release: root.select_2()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Where did the girls cross the street?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "at the wrong place"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "at the right place"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "at the middle of the street"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "What should you do before crossing a street?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "walk at the left side"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "look to the right and to the left"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "look for your friend"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Are you going to play on a busy street?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "yes"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "no"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "maybe"
+                            on_release: root.select_5()
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise5>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 5
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos_hint: {'center_y': 0.5}
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/community.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "KEEPING THE\nCOMMUNITY CLEAN"
+                    ComprehensionBody:
+                        text: "The people in the barangay are happy.\nThey are healthy and strong.\nThey drink safe water.\nTheir houses and yards are always clean.\nTheir homes have good toilets.\nThey all have garbage cans.\nThey all help to make their barangay clean."
+
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "Who are happy?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_1a
+                            text: "the children in the barangay"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "the people in the barangay"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "the boys in the barangay"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Which one tells about the people in the barangay?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "healthy and strong"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "healthy and weak"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "healthy and poor"
+                            on_release: root.select_2()
+
+
+                QuestionParent:
+                    Question:
+                        text: "What do they drink?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "safe water"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "safe coffee"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "softdrinks"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "What can be found in all the houses?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "good toilets"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "pigs and chickens"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "gardens"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who help keep the barangay clean?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "the children"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "the girls"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "the people"
+                            on_release: root.select_5()
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise6>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 6
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/library.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "The Library"
+                    ComprehensionBody:
+                        text: "The library is a room containing\ncollections of books,\nperiodicals and sometimes films and\nrecorded music for people to read,\nto borrow, or refer to. \nIt can be found in schools or  communities.\nThe place should be clean, organized and silent.\nThe one who manages the\nlibrary is called a librarian."
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "What can be found in the library?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_1a
+                            text: "collection of books"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "clothes"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "teachers"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who manages the library?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "Manager"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "Librarian"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "Students"
+                            on_release: root.select_2()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Can people borrow books from the library?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "Yes"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "No"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "Maybe"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "A library should be clean, organized and noisy?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "True"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "False"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "Not sure"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Where will you go if you need a\nreference for a research project?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "to the community"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "to a teacher"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "library"
+                            on_release: root.select_5()
+
+                
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise7>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 7
+
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/ensalada.jpg'
+                StoryGrid:
+                    height: self.height_x2_5
+                    ComprehensionTitle:
+                        text: "How To Cook Ensaladang\nTalbos ng Camote?"
+                    ComprehensionBody:
+                        text: "Ensaladang Talbos ng Kamote is\na nutritious sweet potato leaves salad\nwith vinegar dressing.\nIt is usually mixed with tomatoes,\nginger and onion seasoned with salt.\nOthers mixed it with\nfish bagoong while others do not.\nIt is simple to prepare,\nfirst,  wash and drain the camote tops\nthen steam the camote leaves until wilted.\nOnce it’s done,\nlet it cool down a little.\nSecond, in a separate bowl,\nmix all the spices and\nseason it with salt and vinegar.\nThird, mix the steamed leaves\nand all the seasoned spices.\nLastly, serve it in a separate clean bowl."
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "What vegetable is used\ncooking ensaladang talbos ng camote?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_1a
+                            text: "Talbos ng camote"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Big leaves"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "Kangkong leaves"
+                            on_release: root.select_1()
+
+                QuestionParent:
+                    Question:
+                        text: "What is very first step in\ncooking ensaladang camote tops?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_2a
+                            text: "It is a nutritious food"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "Wash, drain and \n steam the leaves"
+                            on_release: root.select_2()
+                            
+                        Choice:
+                            id: choice_2c
+                            text: "Mix all the spices\n and season it with salt \n and vinegar in a separate bowl."
+                            on_release: root.select_2()
+                            
+
+
+                QuestionParent:
+                    Question:
+                        text: "What is the second step\nin cooking ensaladang camote tops?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_3a
+                            text: "It is a nutritious food"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "Wash, drain and \n steam the leaves"
+                            on_release: root.select_3()
+                            
+                        Choice:
+                            id: choice_3c
+                            text: "Mix all the spices \nand season it with salt and\n vinegar in a separate bowl."
+                            on_release: root.select_3()
+                                    
+                QuestionParent:
+                    Question:
+                        text: "Can we mix fish bagoong on it?"
+                    ChoiceParent:
+            
+                        Choice:
+                            id: choice_4a
+                            text: "yes"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "no"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "it depends"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "What is the last step in cooking\nensaladang  talbos ng camote ?"
+                    ChoiceParent:
+            
+                        Choice:
+                            id: choice_5a
+                            text: "Serve in a\nseparate clean bowl"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "Serve it immediately"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "Serve it with a smile"
+                            on_release: root.select_5()
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise8>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 8
+
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/pillow.jpg'
+                StoryGrid:
+                    ComprehensionTitle:
+                        text: "Jane's Favorite Pillow"
+                    ComprehensionBody:
+                        text:"We have ten pillows in the house.\nOne for every member of the family,\nand three reserved for our guests.\nJane covered hers, with a red\npillow case. It is big and soft.\nShe washes her pillow case\nevery week and dry it immediately.\nIt is hard for her sleep without it."
+
+
+
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "What is the story all about?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_1a
+                            text: "Her favorite pillowcase"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Jane's favorite pillow"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "Her favorite  pillow\nand pillowcase"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "How many are there in the family?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "10"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "7"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "6"
+                            on_release: root.select_2()
+                            
+
+
+                QuestionParent:
+                    Question:
+                        text: "How will you describe the favorite pillow?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "it is washed every week"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "it is big and soft"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "it is hard to sleep without me"
+                            on_release: root.select_3()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Who owns the pillow?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "A girl"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "A boy"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "Me"
+                            on_release: root.select_4()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "Why she immediately dry the pillowcase after washing?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "So, she can\ncover her\n pillow immediately\nand use\nit before night time"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "Because, it is\nher favorite"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "So others will not say\nit is not covered?"
+                            on_release: root.select_5()
+
+
+##############>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<Exercise9>:
+    choice_1a: choice_1a
+    choice_1b: choice_1b
+    choice_1c: choice_1c
+    choice_2a: choice_2a
+    choice_2b: choice_2b
+    choice_2c: choice_2c
+    choice_3a: choice_3a
+    choice_3b: choice_3b
+    choice_3c: choice_3c
+    choice_4a: choice_4a
+    choice_4b: choice_4b
+    choice_4c: choice_4c
+    choice_5a: choice_5a
+    choice_5b: choice_5b
+    choice_5c: choice_5c
+    choice_6a: choice_6a
+    choice_6b: choice_6b
+    choice_6c: choice_6c
+
+    progress_bar: progress_bar
+    
+    exercise_num: 9
+    GridLayout:
+        rows:2
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            size_hint_y: 0.03
+        CaroParent:
+            ScrollView:
+                size_hint: 1,1
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                        source: 'imgs/p7/reunion.jpg'
+
+                StoryGrid:
+                    height: self.height_x3
+                    ComprehensionTitle:
+                        text: "Our Family Reunion"
+                    ComprehensionBody:
+                        text: "My father  has four siblings,\nnamely , Arthur, Armando,\nArmela and Arminda.\nAll of them are married.\nOur grand parents wants\nus to visit them often.\nBut sadly, not everyone could\nvisit them that much\nbecause everyone is often times\nbusy in their farm.\nDuring our grandparents birthday\nevery  sixth month of the year\nand Christmas eve, we are\nhaving our reunion.\neveryone in the family\ncoming with a basket or tray of food.\nWe usually arranged\nit in a long table and eat together.\nBefore the night comes,\nwe talk and play.\nWe talk over our success  and failures.\nWe appreciated and treasured each other."
+
+
+            Carousel:
+                direction: "bottom"
+                QuestionParent:
+                    Question:
+                        text: "What is the story all about?"
+                    ChoiceParent:
+
+                        Choice:
+                            id: choice_1a
+                            text: "Grandparents house visit"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1b
+                            text: "Family reunion"
+                            on_release: root.select_1()
+                        Choice:
+                            id: choice_1c
+                            text: "My fathers’ family"
+                            on_release: root.select_1()
+
+
+                QuestionParent:
+                    Question:
+                        text: "Where was the reunion is being held?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_2a
+                            text: "in our house in the farm"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2b
+                            text: "in the farm"
+                            on_release: root.select_2()
+                        Choice:
+                            id: choice_2c
+                            text: "Grand parents house"
+                            on_release: root.select_2()
+                        
+                QuestionParent:
+                    Question:
+                        text: "If they’re done with the December  reunion,\n when will be their next reunion?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_3a
+                            text: "Christmas eve"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3b
+                            text: "Grandparent’s birthday"
+                            on_release: root.select_3()
+                        Choice:
+                            id: choice_3c
+                            text: "twice a year"
+                            on_release: root.select_3()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "When is granparents birthday?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_4a
+                            text: "June & December"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4b
+                            text: "July & December"
+                            on_release: root.select_4()
+                        Choice:
+                            id: choice_4c
+                            text: "June"
+                            on_release: root.select_4()
+
+
+                QuestionParent:
+                    Question:
+                        text: "How many are grandparent’s children"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_5a
+                            text: "3"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5b
+                            text: "4"
+                            on_release: root.select_5()
+                        Choice:
+                            id: choice_5c
+                            text: "5"
+                            on_release: root.select_5()
+
+                
+                QuestionParent:
+                    Question:
+                        text: "What do they do in a reunion?"
+                    ChoiceParent:
+                        Choice:
+                            id: choice_6a
+                            text: "celebrate Christmas"
+                            on_release: root.select_6()
+                        Choice:
+                            id: choice_6b
+                            text: "celebrate birthday"
+                            on_release: root.select_6()
+                        Choice:
+                            id: choice_6c
+                            text: "celebrate each others\nsuccess and failures"
+                            on_release: root.select_6()
+
+
+
+<LastScreen>:
+    GridLayout:#MAIN
+        cols: 2
+        Widget:
+            canvas:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    source: "imgs/other/extro.jpg"
+                    size: self.size
+                    pos: self.pos
+            
+        GridLayout:
+            rows: 4
+            size_hint_x:0.5
+            padding: 15
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "Armelyn Nahini"
+                    font_size: "18sp"
+                    halign: "center"
+                    font_name: "Comfortaa-SemiBold.ttf"
+                    color: 0,0,1,1
+                  
+                MDLabel:
+                    text: "CONTRIBUTOR"
+                    font_size: "15sp"
+                    halign: "center"
+                BoxLayout:
+
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "Jimmy Verallo Jr."
+                    font_size: "18sp"
+                    halign: "center"
+                    font_name: "Comfortaa-SemiBold.ttf"
+                    color: 0,0,1,1
+    
+                MDLabel:
+                    text: "Voice Talent"
+                    font_size: "15sp"
+                    halign: "center"
+                BoxLayout:       
+
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "Alyssa Primacio-Salido"
+                    font_size: "18sp"
+                    halign: "center"
+                    font_name: "Comfortaa-SemiBold.ttf"
+                    color: 0,0,1,1
+    
+                MDLabel:
+                    text: "Voice Talent"
+                    font_size: "15sp"
+                    halign: "center"
+                BoxLayout: 
+              
+    
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "Van Salido"
+                    font_size: "18sp"
+                    halign: "center"
+                    font_name: "Comfortaa-SemiBold.ttf"
+                    color: 0,0,1,1
+    
+                MDLabel:
+                    text: "DEVELOPER"
+                    font_size: "15sp"
+                    halign: "center"
+                BoxLayout:
+      
+
+        
